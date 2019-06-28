@@ -8,11 +8,13 @@ This repo contains the starter code for the React Context API lab. The starter c
 
 1. Clone this repository
 2. Create a branch
-3. refactor the code to use the React Context API so eliminate the `theme` and `setTheme` props.
+3. refactor the code to use the React Context API and eliminate the need for passing the `theme` and `setTheme` props.
 
 NOTE: The `ThemeContext` has been provided for you in the file `src/quotation/ThemeContext.js`.
 
-To subscribe to the Context, you can use either the standard `<Context.Consumer>` or if you have learned about React `hooks` you can use `React.useContext`.
+### Hooks Option
+
+If you have learned about React **hooks**, then you can use the `React.useContext` hook instead of `<Context.Consumer>` to get the values out of the context.
 
 ## Bonus
 
