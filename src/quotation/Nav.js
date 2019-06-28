@@ -6,7 +6,7 @@ function Nav({ nextQuote, theme, setTheme }) {
     return (
         <nav>
             <ThemeSwitcher theme={theme} changeTheme={setTheme} />
-            <NextQuoteButton theme={theme} next={nextQuote} />
+            <NextQuoteButton theme={theme} nextQuote={nextQuote} />
         </nav>
     )
 }
