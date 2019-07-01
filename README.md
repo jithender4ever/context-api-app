@@ -29,7 +29,11 @@ To help you visualize what is going on, you will start with this structure:
 
 and refactor it to this structure:
 
-![Context](context.png)
+![Solution](solution.png)
 
 **NOTE: the `red` props have been removed because the child components can now get them from the `Context`.**
 
+
+And for the bonus you should end up with this structure:
+
+![Bonus](bonus.png)
