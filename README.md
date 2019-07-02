@@ -1,14 +1,14 @@
-# React Context API Lab - Quotes on Software Engineering
+# React Context API Lab - Replace Prop Drilling with Context API
 
 ## Introduction
 
-This repo contains the starter code for the React Context API lab. The starter code contains a complete working app that shows some random quotes from Software Engineering books.
+This repo contains the starter code for a React Context API lab. The starter code contains a complete working app that shows some random quotes from Software Engineering books. The code works fine but it suffers from the "prop drilling" problem. Your task is to replace the props with the use of the Context API so that only the components that need the data will be involved in getting the data from the Context API.
 
 ## Instructions
 
 1. Clone this repository
-2. Create a branch
-3. refactor the code to use the React Context API and eliminate the need for passing the `theme` and `setTheme` props.
+2. Create a branch called `context-api`
+3. refactor the code to use the React Context API and eliminate the need for passing the `theme` and `setTheme` props
 
 NOTE: The `ThemeContext` has been provided for you in the file `src/quotation/ThemeContext.js`.
 
