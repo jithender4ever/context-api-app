@@ -31,7 +31,7 @@ and refactor it to this structure:
 
 ![Solution](solution.png)
 
-**NOTE: the `red` props have been removed because the child components can now get them from the `Context`.**
+**NOTE: the `red` props have been removed because the child components can now get them from the `ThemeContext`.**
 
 
 And for the bonus you should end up with this structure:
