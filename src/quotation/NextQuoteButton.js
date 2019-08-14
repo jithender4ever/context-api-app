@@ -3,14 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRedo } from '@fortawesome/free-solid-svg-icons'
 
 import ThemeContext from './ThemeContext';
+import QuoteContext from './QuoteContext';
 
-function NextQuoteButton({ nextQuote }) {
+function NextQuoteButton() {
     return (
         <ThemeContext.Consumer>
             {
                 themeObj => (
                     <span>
-                        <button className="refresh" style={themeObj.theme.refresh} onClick={nextQuote}><FontAwesomeIcon icon={faRedo} /></button>
+                        <QuoteContext.Consumer>
+                            { quoteObj => (
+                            <button className="refresh" style={themeObj.theme.refresh} onClick={quoteObj.nextQuote}><FontAwesomeIcon icon={faRedo} /></button>
+                            ) }
+                        </QuoteContext.Consumer>
                     </span>
                 )
             }

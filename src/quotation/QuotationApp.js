@@ -6,6 +6,7 @@ import { themes } from './ThemeService'
 import QuoteService from './QuoteService'
 
 import ThemeContext from './ThemeContext';
+import QuoteContext from './QuoteContext';
 
 class QuotationApp extends React.Component {
     state = {
@@ -13,12 +14,15 @@ class QuotationApp extends React.Component {
             theme: themes[0],
             setTheme: this.setTheme.bind(this)
         },
-        quote: QuoteService.getRandomQuote()
+        quoteObj: {
+            quote: QuoteService.getRandomQuote(),
+            nextQuote: this.nextQuote.bind(this)
+        }
     };
 
-    nextQuote = () => {
+    nextQuote() {
         this.setState({
-            quote: QuoteService.getRandomQuote()
+            quoteObj: { ...this.state.quoteObj, quote: QuoteService.getRandomQuote() }
         })
     };
 
@@ -35,8 +39,10 @@ class QuotationApp extends React.Component {
         return (
             <main style={this.state.themeObj.theme}>
                 <ThemeContext.Provider value={this.state.themeObj}>
-                    <Nav nextQuote={this.nextQuote} setTheme={this.state.themeObj.setTheme} />
-                    <Quotation theme={this.state.themeObj} quote={this.state.quote} />
+                    <QuoteContext.Provider value={this.state.quoteObj}>
+                        <Nav />
+                        <Quotation />
+                    </QuoteContext.Provider>
                 </ThemeContext.Provider>
             </main>
         )

@@ -1,11 +1,25 @@
 import React from 'react'
+import ThemeContext from './ThemeContext'
+import QuoteContext from './QuoteContext'
 
-function Quotation({ quote, theme }) {
+function Quotation() {
     return (
-        <blockquote style={theme.quotation}>
-            <p className="quotation">{quote.text}</p>
-            <footer>— {quote.author}, {quote.source}</footer>
-        </blockquote>
+        <ThemeContext.Consumer>
+            {
+                themeObj => (
+                    <QuoteContext.Consumer>
+                        { quoteObj => (
+                                <blockquote style={themeObj.theme.quotation}>
+                                    <p className="quotation">{quoteObj.quote.text}</p>
+                                    <footer>— {quoteObj.quote.author}, {quoteObj.quote.source}</footer>
+                                </blockquote>
+                            )
+                        }
+
+                    </QuoteContext.Consumer>
+                )
+            }
+        </ThemeContext.Consumer>
     )
 }
 
